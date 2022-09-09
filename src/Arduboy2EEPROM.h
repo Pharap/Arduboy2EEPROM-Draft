@@ -411,9 +411,8 @@ public:
 	/// A reference to an object that shall receive the data
 	/// read from EEPROM.
 	///
-	/// @returns
-	/// @li `true` if the hash of the object matched the stored hash code.
-	/// @li `false` if the hash code did not match.
+	/// @retval true The hash of the stored object matched the stored hash code.
+	/// @retval false The hash code did not match.
 	///
 	/// @pre
 	/// @li `begin()` has been called previously in the program.
@@ -538,9 +537,8 @@ public:
 	/// thus functions, function pointers, lambda expressions,
 	/// and `class`es and `struct`s with `operator()`s are all valid options.
 	///
-	/// @returns
-	/// @li `true` if the hash of the object matched the stored hash code.
-	/// @li `false` if the hash code did not match.
+	/// @retval true The hash of the stored object matched the stored hash code.
+	/// @retval false The hash code did not match.
 	///
 	/// @pre
 	/// @li `begin()` has been called previously in the program.
