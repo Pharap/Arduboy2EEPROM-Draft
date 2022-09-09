@@ -18,41 +18,117 @@ using \mbox{\hyperlink{classArduboy2EEPROM_a6221853153af216c0d6087f1e1455cd7}{ha
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static unsigned char \mbox{\hyperlink{classArduboy2EEPROM_aec3f9eea5f4adc592da921df2ae7ba2d}{read\+Byte}} (uintptr\+\_\+t address)
-\begin{DoxyCompactList}\small\item\em Reads a byte from E\+E\+P\+R\+OM at the specified address. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classArduboy2EEPROM_a4d482ef8e8204c56a0feba68791bc0c8}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Initialises E\+E\+P\+R\+OM for use. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classArduboy2EEPROM_a3804f82ad79284baa047fa3572ea1db5}{commit}} ()
+\begin{DoxyCompactList}\small\item\em Finalises the changes made by previous write operations by committing them to memory. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{classArduboy2EEPROM_a104991fb0112413980ee163aaa14d891}{write\+Byte}} (uintptr\+\_\+t address, unsigned char byte)
 \begin{DoxyCompactList}\small\item\em Writes a byte to E\+E\+P\+R\+OM at the specified address. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Type $>$ }\\static void \mbox{\hyperlink{classArduboy2EEPROM_a6e9b09f0b94295c040204ca0cb674649}{read}} (uintptr\+\_\+t address, Type \&object)
-\begin{DoxyCompactList}\small\item\em Reads any object from E\+E\+P\+R\+OM at the specified address. \end{DoxyCompactList}\item 
+static unsigned char \mbox{\hyperlink{classArduboy2EEPROM_aec3f9eea5f4adc592da921df2ae7ba2d}{read\+Byte}} (uintptr\+\_\+t address)
+\begin{DoxyCompactList}\small\item\em Reads a byte from E\+E\+P\+R\+OM at the specified address. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Type $>$ }\\static void \mbox{\hyperlink{classArduboy2EEPROM_abf7be1f27f4815de59257210dac8c9eb}{write}} (uintptr\+\_\+t address, const Type \&object)
 \begin{DoxyCompactList}\small\item\em Writes any object to E\+E\+P\+R\+OM at the specified address. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Type $>$ }\\static void \mbox{\hyperlink{classArduboy2EEPROM_a6e9b09f0b94295c040204ca0cb674649}{read}} (uintptr\+\_\+t address, Type \&object)
+\begin{DoxyCompactList}\small\item\em Reads any object from E\+E\+P\+R\+OM at the specified address. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classArduboy2EEPROM_a6221853153af216c0d6087f1e1455cd7}{hash\+\_\+type}} \mbox{\hyperlink{classArduboy2EEPROM_a0d81ac363020a75a0b56af7eb014f5b4}{hash}} (const unsigned char $\ast$data, size\+\_\+t size)
 \begin{DoxyCompactList}\small\item\em Calculates a hash code from the specified sequence of bytes. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Type $>$ }\\static \mbox{\hyperlink{classArduboy2EEPROM_a6221853153af216c0d6087f1e1455cd7}{hash\+\_\+type}} \mbox{\hyperlink{classArduboy2EEPROM_a1eb431b4eb962bbd5fe1b18d7ac2af21}{hash}} (const Type \&object)
 \begin{DoxyCompactList}\small\item\em Calculates a hash code from the bytes of the specified object. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Type $>$ }\\static bool \mbox{\hyperlink{classArduboy2EEPROM_abbfe69135a48dc52120d209bfba38b7a}{read\+With\+Hash}} (uintptr\+\_\+t address, Type \&object)
-\begin{DoxyCompactList}\small\item\em Reads both an object and a hash code from E\+E\+P\+R\+OM at the specified address, and determines if the hash of the object matches the stored hash code. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Type $>$ }\\static void \mbox{\hyperlink{classArduboy2EEPROM_a55111051528b8d43a03bd7dd842b0679}{write\+With\+Hash}} (uintptr\+\_\+t address, const Type \&object)
 \begin{DoxyCompactList}\small\item\em Writes both an object and a hash code to E\+E\+P\+R\+OM at the specified address. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Hash , typename Type $>$ }\\static bool \mbox{\hyperlink{classArduboy2EEPROM_a6b0ef10b0c2f082b2c55a6e002802512}{read\+With\+Hash}} (uintptr\+\_\+t address, Type \&object, Hash \&\&\mbox{\hyperlink{classArduboy2EEPROM_a0d81ac363020a75a0b56af7eb014f5b4}{hash}})
-\begin{DoxyCompactList}\small\item\em Reads both an object and a hash code from E\+E\+P\+R\+OM at the specified address, and determines if the hash of the object matches the stored hash code. This overload accepts a custom hash provider. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Type $>$ }\\static bool \mbox{\hyperlink{classArduboy2EEPROM_abbfe69135a48dc52120d209bfba38b7a}{read\+With\+Hash}} (uintptr\+\_\+t address, Type \&object)
+\begin{DoxyCompactList}\small\item\em Reads both an object and a hash code from E\+E\+P\+R\+OM at the specified address, and determines if the hash of the object matches the stored hash code. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Hash , typename Type $>$ }\\static void \mbox{\hyperlink{classArduboy2EEPROM_a40f0abec863d2772e8da19d3cf37e980}{write\+With\+Hash}} (uintptr\+\_\+t address, const Type \&object, Hash \&\&\mbox{\hyperlink{classArduboy2EEPROM_a0d81ac363020a75a0b56af7eb014f5b4}{hash}})
-\begin{DoxyCompactList}\small\item\em Writes both an object and a hash code to E\+E\+P\+R\+OM at the specified address. This overload accepts a custom hash provider. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Writes both an object and a hash code to E\+E\+P\+R\+OM at the specified address. This overload accepts a custom hash provider. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Hash , typename Type $>$ }\\static bool \mbox{\hyperlink{classArduboy2EEPROM_a6b0ef10b0c2f082b2c55a6e002802512}{read\+With\+Hash}} (uintptr\+\_\+t address, Type \&object, Hash \&\&\mbox{\hyperlink{classArduboy2EEPROM_a0d81ac363020a75a0b56af7eb014f5b4}{hash}})
+\begin{DoxyCompactList}\small\item\em Reads both an object and a hash code from E\+E\+P\+R\+OM at the specified address, and determines if the hash of the object matches the stored hash code. This overload accepts a custom hash provider. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 A {\ttfamily class} containing E\+E\+P\+R\+O\+M-\/manipulating {\ttfamily static} functions. 
 
 \begin{DoxyWarning}{Warning}
-The Arduboy has 1KiB of E\+E\+P\+R\+OM, which spans the consecutive range of addresses from 0 to 1023 inclusive. Attempting to write to or read from any address beyond that range that range shall result in {\itshape undefined behaviour}. 
+The Arduboy has 1KiB of E\+E\+P\+R\+OM, which spans the consecutive range of addresses from 0 to 1023 inclusive. Attempting to write to or read from any address beyond that range that range shall result in {\itshape undefined behaviour}.
+
+Violation of any of the preconditions or postconditions specified herein shall result in {\itshape undefined behaviour}.
+
+The consequences of failing to adhere to the preconditions and postconditions shall be the responsibility of the programmer using the library. 
 \end{DoxyWarning}
 
 
-Definition at line 23 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
+Definition at line 34 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
 
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classArduboy2EEPROM_a4d482ef8e8204c56a0feba68791bc0c8}\label{classArduboy2EEPROM_a4d482ef8e8204c56a0feba68791bc0c8}} 
+\index{Arduboy2EEPROM@{Arduboy2EEPROM}!begin@{begin}}
+\index{begin@{begin}!Arduboy2EEPROM@{Arduboy2EEPROM}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily static void Arduboy2\+E\+E\+P\+R\+O\+M\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Initialises E\+E\+P\+R\+OM for use. 
+
+\begin{DoxyParagraph}{Complexity}
+{\ttfamily O(1)}.
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondition}
+\begin{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a4d482ef8e8204c56a0feba68791bc0c8}{begin()}}} has {\bfseries{not}} been called previously in the program.\end{DoxyItemize}
+
+\end{DoxyPrecond}
+\begin{DoxyNote}{Note}
+This function exists to support devices that do not have native E\+E\+P\+R\+OM. On devices that do have native E\+E\+P\+R\+OM, such as the Arduboy, this function is technically unneccessary and performs no work, thus allowing it to be optimised away by the compiler.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+\begin{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a4d482ef8e8204c56a0feba68791bc0c8}{begin()}}} {\bfseries{must}} be called before attempting to perform any E\+E\+P\+R\+OM read or write operations, e.\+g. {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_aec3f9eea5f4adc592da921df2ae7ba2d}{read\+Byte()}}}, {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a104991fb0112413980ee163aaa14d891}{write\+Byte()}}}, {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a6e9b09f0b94295c040204ca0cb674649}{read()}}}, {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_abf7be1f27f4815de59257210dac8c9eb}{write()}}}. \item Once {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a4d482ef8e8204c56a0feba68791bc0c8}{begin()}}} has been called, it {\bfseries{must not}} be called again. \end{DoxyItemize}
+
+\end{DoxyWarning}
+
+
+Definition at line 57 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
+
+\mbox{\Hypertarget{classArduboy2EEPROM_a3804f82ad79284baa047fa3572ea1db5}\label{classArduboy2EEPROM_a3804f82ad79284baa047fa3572ea1db5}} 
+\index{Arduboy2EEPROM@{Arduboy2EEPROM}!commit@{commit}}
+\index{commit@{commit}!Arduboy2EEPROM@{Arduboy2EEPROM}}
+\subsubsection{\texorpdfstring{commit()}{commit()}}
+{\footnotesize\ttfamily static void Arduboy2\+E\+E\+P\+R\+O\+M\+::commit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Finalises the changes made by previous write operations by committing them to memory. 
+
+\begin{DoxyParagraph}{Complexity}
+{\ttfamily O(1)}.
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondition}
+\begin{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a4d482ef8e8204c56a0feba68791bc0c8}{begin()}}} has been called previously in the program.\end{DoxyItemize}
+
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\begin{DoxyItemize}
+\item All data written via write operations (e.\+g. {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a104991fb0112413980ee163aaa14d891}{write\+Byte()}}}, {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_abf7be1f27f4815de59257210dac8c9eb}{write()}}}) has been committed to memory.\end{DoxyItemize}
+
+\end{DoxyPostcond}
+\begin{DoxyNote}{Note}
+This function exists to support devices that do not have native E\+E\+P\+R\+OM. On devices that do have native E\+E\+P\+R\+OM, such as the Arduboy, this function is technically unneccessary and performs no work, thus allowing it to be optimised away by the compiler.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+\begin{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a3804f82ad79284baa047fa3572ea1db5}{commit()}}} {\bfseries{must}} be called to finalise the modifications made by any previous write operations, e.\+g. {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a104991fb0112413980ee163aaa14d891}{write\+Byte()}}}, {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_abf7be1f27f4815de59257210dac8c9eb}{write()}}}. \item Failure to call {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a3804f82ad79284baa047fa3572ea1db5}{commit()}}} {\bfseries{may}} result in the discarding of any or all of the data written by previous write operations. Discarded data is {\bfseries{not}} committed to memory.\end{DoxyItemize}
+
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+When some data is written and other data is not, this is known as a \textquotesingle{}partial write\textquotesingle{}. 
+\end{DoxyNote}
+
+
+Definition at line 92 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
+
 \mbox{\Hypertarget{classArduboy2EEPROM_a0d81ac363020a75a0b56af7eb014f5b4}\label{classArduboy2EEPROM_a0d81ac363020a75a0b56af7eb014f5b4}} 
 \index{Arduboy2EEPROM@{Arduboy2EEPROM}!hash@{hash}}
 \index{hash@{hash}!Arduboy2EEPROM@{Arduboy2EEPROM}}
@@ -86,7 +162,7 @@ If {\ttfamily size} is {\ttfamily 0}, the returned hash code will also be {\ttfa
 \end{DoxyNote}
 
 
-Definition at line 174 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
+Definition at line 300 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
 
 \mbox{\Hypertarget{classArduboy2EEPROM_a1eb431b4eb962bbd5fe1b18d7ac2af21}\label{classArduboy2EEPROM_a1eb431b4eb962bbd5fe1b18d7ac2af21}} 
 \index{Arduboy2EEPROM@{Arduboy2EEPROM}!hash@{hash}}
@@ -112,12 +188,12 @@ The hash code calculated from the provided sequence of bytes.
 \end{DoxyReturn}
 \begin{DoxyPrecond}{Precondition}
 \begin{DoxyItemize}
-\item {\ttfamily Type} {\bfseries{must}} be a \href{https://en.cppreference.com/w/cpp/named_req/TrivialType}{\texttt{ {\itshape trivial type}}}. --- In particular, if it is a {\ttfamily struct} or {\ttfamily class} type, that type {\bfseries{must not}} contain any {\ttfamily virtual} functions and {\bfseries{must not}} use {\ttfamily virtual} inheritance. \end{DoxyItemize}
-
+\item {\ttfamily Type} {\bfseries{should not}} be a pointer type. \item {\ttfamily Type} {\bfseries{should not}} have any member variables of pointer type. \item {\ttfamily Type} {\bfseries{should}} be a \href{https://en.cppreference.com/w/cpp/named_req/TrivialType}{\texttt{ {\itshape trivial type}}}. \item If {\ttfamily Type} is a {\ttfamily struct} or {\ttfamily class} type, it {\bfseries{should}} be a \href{https://en.cppreference.com/w/cpp/language/classes\#Standard-layout_class}{\texttt{ {\itshape standard-\/layout class}}}. --- In particular, that type {\bfseries{should not}} have any {\ttfamily virtual} functions and {\bfseries{should not}} have any {\ttfamily virtual} base classes.\end{DoxyItemize}
+This function calculates a hash code of the provided {\ttfamily object} by hashing the bytes of the {\ttfamily object}\textquotesingle{}s \href{https://en.cppreference.com/w/cpp/language/object\#Object_representation_and_value_representation}{\texttt{ {\itshape object representation}}}. It does this by taking a pointer to the {\ttfamily object}, converting it to a {\ttfamily const unsigned char $\ast$}, and calculating the hash of the resulting sequence of bytes. 
 \end{DoxyPrecond}
 
 
-Definition at line 204 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
+Definition at line 344 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
 
 \mbox{\Hypertarget{classArduboy2EEPROM_a6e9b09f0b94295c040204ca0cb674649}\label{classArduboy2EEPROM_a6e9b09f0b94295c040204ca0cb674649}} 
 \index{Arduboy2EEPROM@{Arduboy2EEPROM}!read@{read}}
@@ -131,7 +207,7 @@ static void Arduboy2\+E\+E\+P\+R\+O\+M\+::read (\begin{DoxyParamCaption}\item[{u
 Reads any object from E\+E\+P\+R\+OM at the specified address. 
 
 \begin{DoxyParagraph}{Complexity}
-{\ttfamily O(n)}, where {\ttfamily n} is {\ttfamily sizeof(object)}.
+{\ttfamily O(n)}, where {\ttfamily n} is \href{https://en.cppreference.com/w/cpp/language/sizeof}{\texttt{ {\ttfamily sizeof(object)}}}.
 \end{DoxyParagraph}
 
 \begin{DoxyParams}[1]{Parameters}
@@ -142,12 +218,19 @@ Reads any object from E\+E\+P\+R\+OM at the specified address.
 \end{DoxyParams}
 \begin{DoxyPrecond}{Precondition}
 \begin{DoxyItemize}
-\item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}. \item {\ttfamily ((address + sizeof(object)) $<$= 1024)} --- The value of the expression {\ttfamily (address + sizeof(object))} {\bfseries{must not}} exceed a value of {\ttfamily 1024}. \item {\ttfamily Type} {\bfseries{must}} be a \href{https://en.cppreference.com/w/cpp/named_req/TrivialType}{\texttt{ {\itshape trivial type}}}. --- In particular, if it is a {\ttfamily struct} or {\ttfamily class} type, that type {\bfseries{must not}} have any {\ttfamily virtual} functions and {\bfseries{must not}} have any {\ttfamily virtual} base classes. \end{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a4d482ef8e8204c56a0feba68791bc0c8}{begin()}}} has been called previously in the program. \item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}. \item {\ttfamily ((address + sizeof(object)) $<$= 1024)} --- The value of the expression {\ttfamily (address + sizeof(object))} {\bfseries{must not}} exceed a value of {\ttfamily 1024}. \item {\ttfamily Type} {\bfseries{should not}} be a pointer type. \item {\ttfamily Type} {\bfseries{should not}} have any member variables of pointer type. \item {\ttfamily Type} {\bfseries{should}} be a \href{https://en.cppreference.com/w/cpp/named_req/TrivialType}{\texttt{ {\itshape trivial type}}}. \item If {\ttfamily Type} is a {\ttfamily struct} or {\ttfamily class} type, it {\bfseries{should}} be a \href{https://en.cppreference.com/w/cpp/language/classes\#Standard-layout_class}{\texttt{ {\itshape standard-\/layout class}}}. --- In particular, that type {\bfseries{should not}} have any {\ttfamily virtual} functions and {\bfseries{should not}} have any {\ttfamily virtual} base classes.\end{DoxyItemize}
 
 \end{DoxyPrecond}
+\begin{DoxyWarning}{Warning}
+Whilst pointers are guaranteed to retain the value they had when they were saved, there are many circumstances in which the value of a stored pointer may become invalid before its retrieval.
+
+E.\+g. a pointer that points to a global variable may be invalidated if the program is recompiled, with or without a change to compiler settings. 
+\end{DoxyWarning}
 
 
-Definition at line 99 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
+This function overwrites the provided {\ttfamily object}\textquotesingle{}s \href{https://en.cppreference.com/w/cpp/language/object\#Object_representation_and_value_representation}{\texttt{ {\itshape object representation}}} with an {\itshape object representation} stored in E\+E\+P\+R\+OM (i.\+e. by {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_abf7be1f27f4815de59257210dac8c9eb}{write()}}}). It does this by taking a pointer to the {\ttfamily object}, converting it to an {\ttfamily unsigned char $\ast$}, and reading a suitably-\/sized sequence of bytes (i.\+e. a sequence of {\ttfamily sizeof(object)} bytes) from E\+E\+P\+R\+OM. 
+
+Definition at line 265 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
 
 \mbox{\Hypertarget{classArduboy2EEPROM_aec3f9eea5f4adc592da921df2ae7ba2d}\label{classArduboy2EEPROM_aec3f9eea5f4adc592da921df2ae7ba2d}} 
 \index{Arduboy2EEPROM@{Arduboy2EEPROM}!readByte@{readByte}}
@@ -172,12 +255,12 @@ The value of the byte at the specified address in E\+E\+P\+R\+OM.
 \end{DoxyReturn}
 \begin{DoxyPrecond}{Precondition}
 \begin{DoxyItemize}
-\item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}. \end{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a4d482ef8e8204c56a0feba68791bc0c8}{begin()}}} has been called previously in the program. \item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}. \end{DoxyItemize}
 
 \end{DoxyPrecond}
 
 
-Definition at line 41 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
+Definition at line 141 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
 
 \mbox{\Hypertarget{classArduboy2EEPROM_abbfe69135a48dc52120d209bfba38b7a}\label{classArduboy2EEPROM_abbfe69135a48dc52120d209bfba38b7a}} 
 \index{Arduboy2EEPROM@{Arduboy2EEPROM}!readWithHash@{readWithHash}}
@@ -207,7 +290,7 @@ Reads both an object and a hash code from E\+E\+P\+R\+OM at the specified addres
 \end{DoxyReturn}
 \begin{DoxyPrecond}{Precondition}
 \begin{DoxyItemize}
-\item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}. \item {\ttfamily ((address + sizeof(hash\+\_\+type) + sizeof(object)) $<$= 1024)} --- The value of the expression {\ttfamily (address + sizeof(hash\+\_\+type) + sizeof(object))} {\bfseries{must not}} exceed a value of {\ttfamily 1024}. \item {\ttfamily Type} {\bfseries{must}} be a \href{https://en.cppreference.com/w/cpp/named_req/TrivialType}{\texttt{ {\itshape trivial type}}}. --- In particular, if it is a {\ttfamily struct} or {\ttfamily class} type, that type {\bfseries{must not}} have any {\ttfamily virtual} functions and {\bfseries{must not}} have any {\ttfamily virtual} base classes.\end{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a4d482ef8e8204c56a0feba68791bc0c8}{begin()}}} has been called previously in the program. \item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}. \item {\ttfamily ((address + sizeof(hash\+\_\+type) + sizeof(object)) $<$= 1024)} --- The value of the expression {\ttfamily (address + sizeof(hash\+\_\+type) + sizeof(object))} {\bfseries{must not}} exceed a value of {\ttfamily 1024}. \item {\ttfamily Type} {\bfseries{should not}} be a pointer type. \item {\ttfamily Type} {\bfseries{should not}} have any member variables of pointer type. \item {\ttfamily Type} {\bfseries{should}} be a \href{https://en.cppreference.com/w/cpp/named_req/TrivialType}{\texttt{ {\itshape trivial type}}}. \item If {\ttfamily Type} is a {\ttfamily struct} or {\ttfamily class} type, it {\bfseries{should}} be a \href{https://en.cppreference.com/w/cpp/language/classes\#Standard-layout_class}{\texttt{ {\itshape standard-\/layout class}}}. --- In particular, that type {\bfseries{should not}} have any {\ttfamily virtual} functions and {\bfseries{should not}} have any {\ttfamily virtual} base classes.\end{DoxyItemize}
 
 \end{DoxyPrecond}
 \begin{DoxySeeAlso}{See also}
@@ -215,7 +298,7 @@ Reads both an object and a hash code from E\+E\+P\+R\+OM at the specified addres
 \end{DoxySeeAlso}
 
 
-Definition at line 244 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
+Definition at line 440 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
 
 \mbox{\Hypertarget{classArduboy2EEPROM_a6b0ef10b0c2f082b2c55a6e002802512}\label{classArduboy2EEPROM_a6b0ef10b0c2f082b2c55a6e002802512}} 
 \index{Arduboy2EEPROM@{Arduboy2EEPROM}!readWithHash@{readWithHash}}
@@ -247,7 +330,7 @@ The complexity of this function is equivalent to the complexity of the expressio
 \end{DoxyReturn}
 \begin{DoxyPrecond}{Precondition}
 \begin{DoxyItemize}
-\item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}. \item {\ttfamily ((address + sizeof(hash\+\_\+type) + sizeof(object)) $<$= 1024)} --- The value of the expression {\ttfamily (address + sizeof(hash\+\_\+type) + sizeof(object))} {\bfseries{must not}} exceed a value of {\ttfamily 1024}. \item {\ttfamily Type} {\bfseries{must}} be a \href{https://en.cppreference.com/w/cpp/named_req/TrivialType}{\texttt{ {\itshape trivial type}}}. --- In particular, if it is a {\ttfamily struct} or {\ttfamily class} type, that type {\bfseries{must not}} have any {\ttfamily virtual} functions and {\bfseries{must not}} have any {\ttfamily virtual} base classes. \item {\ttfamily hash(object)} {\bfseries{must}} be a valid expression.\end{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a4d482ef8e8204c56a0feba68791bc0c8}{begin()}}} has been called previously in the program. \item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}. \item {\ttfamily ((address + sizeof(hash\+\_\+type) + sizeof(object)) $<$= 1024)} --- The value of the expression {\ttfamily (address + sizeof(hash\+\_\+type) + sizeof(object))} {\bfseries{must not}} exceed a value of {\ttfamily 1024}. \item The expression {\ttfamily hash(object)} {\bfseries{must}} be a valid expression. \item The type of {\ttfamily hash(object)} {\bfseries{should}} satisfy the same requirements as {\ttfamily Type}. \item {\ttfamily Type} {\bfseries{should not}} be a pointer type. \item {\ttfamily Type} {\bfseries{should not}} have any member variables of pointer type. \item {\ttfamily Type} {\bfseries{should}} be a \href{https://en.cppreference.com/w/cpp/named_req/TrivialType}{\texttt{ {\itshape trivial type}}}. \item If {\ttfamily Type} is a {\ttfamily struct} or {\ttfamily class} type, it {\bfseries{should}} be a \href{https://en.cppreference.com/w/cpp/language/classes\#Standard-layout_class}{\texttt{ {\itshape standard-\/layout class}}}. --- In particular, that type {\bfseries{should not}} have any {\ttfamily virtual} functions and {\bfseries{should not}} have any {\ttfamily virtual} base classes.\end{DoxyItemize}
 
 \end{DoxyPrecond}
 \begin{DoxySeeAlso}{See also}
@@ -255,7 +338,7 @@ The complexity of this function is equivalent to the complexity of the expressio
 \end{DoxySeeAlso}
 
 
-Definition at line 343 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
+Definition at line 570 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
 
 \mbox{\Hypertarget{classArduboy2EEPROM_abf7be1f27f4815de59257210dac8c9eb}\label{classArduboy2EEPROM_abf7be1f27f4815de59257210dac8c9eb}} 
 \index{Arduboy2EEPROM@{Arduboy2EEPROM}!write@{write}}
@@ -280,15 +363,22 @@ Writes any object to E\+E\+P\+R\+OM at the specified address.
 \end{DoxyParams}
 \begin{DoxyPrecond}{Precondition}
 \begin{DoxyItemize}
-\item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}. \item {\ttfamily ((address + sizeof(object)) $<$= 1024)} --- The value of the expression {\ttfamily (address + sizeof(object))} {\bfseries{must not}} exceed a value of {\ttfamily 1024}. \item {\ttfamily Type} {\bfseries{must}} be a \href{https://en.cppreference.com/w/cpp/named_req/TrivialType}{\texttt{ {\itshape trivial type}}}. --- In particular, if it is a {\ttfamily struct} or {\ttfamily class} type, that type {\bfseries{must not}} have any {\ttfamily virtual} functions and {\bfseries{must not}} have any {\ttfamily virtual} base classes.\end{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a4d482ef8e8204c56a0feba68791bc0c8}{begin()}}} has been called previously in the program. \item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}. \item {\ttfamily ((address + sizeof(object)) $<$= 1024)} --- The value of the expression {\ttfamily (address + sizeof(object))} {\bfseries{must not}} exceed a value of {\ttfamily 1024}. \item {\ttfamily Type} {\bfseries{should not}} be a pointer type. \item {\ttfamily Type} {\bfseries{should not}} have any member variables of pointer type. \item {\ttfamily Type} {\bfseries{should}} be a \href{https://en.cppreference.com/w/cpp/named_req/TrivialType}{\texttt{ {\itshape trivial type}}}. \item If {\ttfamily Type} is a {\ttfamily struct} or {\ttfamily class} type, it {\bfseries{should}} be a \href{https://en.cppreference.com/w/cpp/language/classes\#Standard-layout_class}{\texttt{ {\itshape standard-\/layout class}}}. --- In particular, that type {\bfseries{should not}} have any {\ttfamily virtual} functions and {\bfseries{should not}} have any {\ttfamily virtual} base classes.\end{DoxyItemize}
 
 \end{DoxyPrecond}
 \begin{DoxyNote}{Note}
-If the value to be written is the same as the value already stored at the specified address then this function will {\itshape not} overwrite the already stored value. This behaviour avoids unnecessarily wasting E\+E\+P\+R\+OM write-\/erase cycles, which are a limited resource. 
+If the value to be written is the same as the value already stored at the specified address then this function will {\itshape not} overwrite the already stored value. This behaviour avoids unnecessarily wasting E\+E\+P\+R\+OM write-\/erase cycles, which are a limited resource.
 \end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Whilst pointers are guaranteed to retain the value they had when they were saved, there are many circumstances in which the value of a stored pointer may become invalid before its retrieval.
+
+E.\+g. a pointer that points to a global variable may be invalidated if the program is recompiled, with or without a change to compiler settings. 
+\end{DoxyWarning}
 
 
-Definition at line 139 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
+This function writes the provided {\ttfamily object}\textquotesingle{}s \href{https://en.cppreference.com/w/cpp/language/object\#Object_representation_and_value_representation}{\texttt{ {\itshape object representation}}} into E\+E\+P\+R\+OM by taking a pointer to the {\ttfamily object}, converting it to a {\ttfamily const unsigned char $\ast$}, and writing the derived sequence of bytes into E\+E\+P\+R\+OM. 
+
+Definition at line 203 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
 
 \mbox{\Hypertarget{classArduboy2EEPROM_a104991fb0112413980ee163aaa14d891}\label{classArduboy2EEPROM_a104991fb0112413980ee163aaa14d891}} 
 \index{Arduboy2EEPROM@{Arduboy2EEPROM}!writeByte@{writeByte}}
@@ -312,7 +402,7 @@ Writes a byte to E\+E\+P\+R\+OM at the specified address.
 \end{DoxyParams}
 \begin{DoxyPrecond}{Precondition}
 \begin{DoxyItemize}
-\item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}.\end{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a4d482ef8e8204c56a0feba68791bc0c8}{begin()}}} has been called previously in the program. \item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}.\end{DoxyItemize}
 
 \end{DoxyPrecond}
 \begin{DoxyNote}{Note}
@@ -320,7 +410,7 @@ If the value to be written is the same as the value already stored at the specif
 \end{DoxyNote}
 
 
-Definition at line 68 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
+Definition at line 120 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
 
 \mbox{\Hypertarget{classArduboy2EEPROM_a55111051528b8d43a03bd7dd842b0679}\label{classArduboy2EEPROM_a55111051528b8d43a03bd7dd842b0679}} 
 \index{Arduboy2EEPROM@{Arduboy2EEPROM}!writeWithHash@{writeWithHash}}
@@ -345,7 +435,7 @@ Writes both an object and a hash code to E\+E\+P\+R\+OM at the specified address
 \end{DoxyParams}
 \begin{DoxyPrecond}{Precondition}
 \begin{DoxyItemize}
-\item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}. \item {\ttfamily ((address + sizeof(hash\+\_\+type) + sizeof(object)) $<$= 1024)} --- The value of the expression {\ttfamily (address + sizeof(hash\+\_\+type) + sizeof(object))} {\bfseries{must not}} exceed a value of {\ttfamily 1024}. \item {\ttfamily Type} {\bfseries{must}} be a \href{https://en.cppreference.com/w/cpp/named_req/TrivialType}{\texttt{ {\itshape trivial type}}}. --- In particular, if it is a {\ttfamily struct} or {\ttfamily class} type, that type {\bfseries{must not}} have any {\ttfamily virtual} functions and {\bfseries{must not}} have any {\ttfamily virtual} base classes.\end{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a4d482ef8e8204c56a0feba68791bc0c8}{begin()}}} has been called previously in the program. \item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}. \item {\ttfamily ((address + sizeof(hash\+\_\+type) + sizeof(object)) $<$= 1024)} --- The value of the expression {\ttfamily (address + sizeof(hash\+\_\+type) + sizeof(object))} {\bfseries{must not}} exceed a value of {\ttfamily 1024}. \item {\ttfamily Type} {\bfseries{should not}} be a pointer type. \item {\ttfamily Type} {\bfseries{should not}} have any member variables of pointer type. \item {\ttfamily Type} {\bfseries{should}} be a \href{https://en.cppreference.com/w/cpp/named_req/TrivialType}{\texttt{ {\itshape trivial type}}}. \item If {\ttfamily Type} is a {\ttfamily struct} or {\ttfamily class} type, it {\bfseries{should}} be a \href{https://en.cppreference.com/w/cpp/language/classes\#Standard-layout_class}{\texttt{ {\itshape standard-\/layout class}}}. --- In particular, that type {\bfseries{should not}} have any {\ttfamily virtual} functions and {\bfseries{should not}} have any {\ttfamily virtual} base classes. {\bfseries{should not}} have any {\ttfamily virtual} base classes.\end{DoxyItemize}
 
 \end{DoxyPrecond}
 \begin{DoxyNote}{Note}
@@ -356,7 +446,7 @@ If the value to be written is the same as the value already stored at the specif
 \end{DoxySeeAlso}
 
 
-Definition at line 291 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
+Definition at line 393 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
 
 \mbox{\Hypertarget{classArduboy2EEPROM_a40f0abec863d2772e8da19d3cf37e980}\label{classArduboy2EEPROM_a40f0abec863d2772e8da19d3cf37e980}} 
 \index{Arduboy2EEPROM@{Arduboy2EEPROM}!writeWithHash@{writeWithHash}}
@@ -383,7 +473,7 @@ The complexity of this function is equivalent to the complexity of the expressio
 \end{DoxyParams}
 \begin{DoxyPrecond}{Precondition}
 \begin{DoxyItemize}
-\item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}. \item {\ttfamily ((address + sizeof(hash\+\_\+type) + sizeof(object)) $<$= 1024)} --- The value of the expression {\ttfamily (address + sizeof(hash\+\_\+type) + sizeof(object))} {\bfseries{must not}} exceed a value of {\ttfamily 1024}. \item {\ttfamily Type} {\bfseries{must}} be a \href{https://en.cppreference.com/w/cpp/named_req/TrivialType}{\texttt{ {\itshape trivial type}}}. --- In particular, if it is a {\ttfamily struct} or {\ttfamily class} type, that type {\bfseries{must not}} have any {\ttfamily virtual} functions and {\bfseries{must not}} have any {\ttfamily virtual} base classes. \item {\ttfamily hash(object)} {\bfseries{must}} be a valid expression.\end{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM_a4d482ef8e8204c56a0feba68791bc0c8}{begin()}}} has been called previously in the program. \item {\ttfamily (address $<$= 1023)} --- {\ttfamily address} {\bfseries{must not}} exceed a value of {\ttfamily 1023}. \item {\ttfamily ((address + sizeof(hash\+\_\+type) + sizeof(object)) $<$= 1024)} --- The value of the expression {\ttfamily (address + sizeof(hash\+\_\+type) + sizeof(object))} {\bfseries{must not}} exceed a value of {\ttfamily 1024}. \item The expression {\ttfamily hash(object)} {\bfseries{must}} be a valid expression. \item The type of {\ttfamily hash(object)} {\bfseries{should}} satisfy the same requirements as {\ttfamily Type}. \item {\ttfamily Type} {\bfseries{should not}} be a pointer type. \item {\ttfamily Type} {\bfseries{should not}} have any member variables of pointer type. \item {\ttfamily Type} {\bfseries{should}} be a \href{https://en.cppreference.com/w/cpp/named_req/TrivialType}{\texttt{ {\itshape trivial type}}}. \item If {\ttfamily Type} is a {\ttfamily struct} or {\ttfamily class} type, it {\bfseries{should}} be a \href{https://en.cppreference.com/w/cpp/language/classes\#Standard-layout_class}{\texttt{ {\itshape standard-\/layout class}}}. --- In particular, that type {\bfseries{should not}} have any {\ttfamily virtual} functions and {\bfseries{should not}} have any {\ttfamily virtual} base classes.\end{DoxyItemize}
 
 \end{DoxyPrecond}
 \begin{DoxyNote}{Note}
@@ -394,7 +484,7 @@ If the value to be written is the same as the value already stored at the specif
 \end{DoxySeeAlso}
 
 
-Definition at line 405 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
+Definition at line 506 of file Arduboy2\+E\+E\+P\+R\+O\+M.\+h.
 
 
 

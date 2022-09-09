@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['write',['write',['../classArduboy2EEPROM.html#abf7be1f27f4815de59257210dac8c9eb',1,'Arduboy2EEPROM']]],
-  ['writebyte',['writeByte',['../classArduboy2EEPROM.html#a104991fb0112413980ee163aaa14d891',1,'Arduboy2EEPROM']]],
-  ['writewithhash',['writeWithHash',['../classArduboy2EEPROM.html#a55111051528b8d43a03bd7dd842b0679',1,'Arduboy2EEPROM::writeWithHash(uintptr_t address, const Type &amp;object)'],['../classArduboy2EEPROM.html#a40f0abec863d2772e8da19d3cf37e980',1,'Arduboy2EEPROM::writeWithHash(uintptr_t address, const Type &amp;object, Hash &amp;&amp;hash)']]]
+  ['hash',['hash',['../classArduboy2EEPROM.html#a0d81ac363020a75a0b56af7eb014f5b4',1,'Arduboy2EEPROM::hash(const unsigned char *data, size_t size)'],['../classArduboy2EEPROM.html#a1eb431b4eb962bbd5fe1b18d7ac2af21',1,'Arduboy2EEPROM::hash(const Type &amp;object)']]],
+  ['hash_5ftype',['hash_type',['../classArduboy2EEPROM.html#a6221853153af216c0d6087f1e1455cd7',1,'Arduboy2EEPROM']]]
 ];

@@ -2,9 +2,11 @@
 \label{Arduboy2EEPROM_8h}\index{Arduboy2EEPROM.h@{Arduboy2EEPROM.h}}
 
 
-The \mbox{\hyperlink{classArduboy2EEPROM}{Arduboy2\+E\+E\+P\+R\+OM}} Class.  
+The {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM}{Arduboy2\+E\+E\+P\+R\+OM}}} class.  
 
 
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
 {\ttfamily \#include $<$avr/eeprom.\+h$>$}\newline
 Include dependency graph for Arduboy2\+E\+E\+P\+R\+O\+M.\+h\+:
 % FIG 0
@@ -16,5 +18,8 @@ class \mbox{\hyperlink{classArduboy2EEPROM}{Arduboy2\+E\+E\+P\+R\+OM}}
 
 
 \subsection{Detailed Description}
-The \mbox{\hyperlink{classArduboy2EEPROM}{Arduboy2\+E\+E\+P\+R\+OM}} Class. 
+The {\ttfamily \mbox{\hyperlink{classArduboy2EEPROM}{Arduboy2\+E\+E\+P\+R\+OM}}} class. 
 
+An A\+PI for manipulating E\+E\+P\+R\+OM. \begin{DoxyAuthor}{Author}
+\href{https://github.com/Pharap}{\texttt{ Pharap}} 
+\end{DoxyAuthor}
