@@ -273,7 +273,7 @@ public:
 	/// @brief
 	/// The type used to represent the hash code produced
 	/// by the `hash` function.
-	using hash_type = uint32_t;
+	using HashType = uint32_t;
 	
 	/// @brief
 	/// Calculates a hash code from the specified sequence of bytes.
@@ -297,9 +297,9 @@ public:
 	///
 	/// @note
 	/// If `size` is `0`, the returned hash code will also be `0`.
-	static hash_type hash(const unsigned char * data, size_t size)
+	static HashType hash(const unsigned char * data, size_t size)
 	{
-		hash_type value = size;
+		HashType value = size;
 		
 		for(size_t index = 0; index < size; ++index)
 			value = (((value << 5) ^ (value >> 27)) ^ data[index]);
@@ -341,7 +341,7 @@ public:
 	/// converting it to a `const unsigned char *`,
 	/// and calculating the hash of the resulting sequence of bytes.
 	template<typename Type>
-	static hash_type hash(const Type & object)
+	static HashType hash(const Type & object)
 	{
 		return hash(reinterpret_cast<const unsigned char *>(&object), sizeof(object));
 	}
@@ -364,9 +364,9 @@ public:
 	/// @li `begin()` has been called previously in the program.
 	/// @li `(address <= 1023)` &mdash;
 	/// `address` **must not** exceed a value of `1023`.
-	/// @li `((address + sizeof(hash_type) + sizeof(object)) <= 1024)` &mdash;
+	/// @li `((address + sizeof(HashType) + sizeof(object)) <= 1024)` &mdash;
 	/// The value of the expression
-	/// `(address + sizeof(hash_type) + sizeof(object))`
+	/// `(address + sizeof(HashType) + sizeof(object))`
 	/// **must not** exceed a value of `1024`.
 	/// @li `Type` **should not** be a pointer type.
 	/// @li `Type` **should not** have any member variables of pointer type.
@@ -393,7 +393,7 @@ public:
 	static void writeWithHash(uintptr_t address, const Type & object)
 	{
 		write(address, hash(object));
-		write(address + sizeof(hash_type), object);
+		write(address + sizeof(HashType), object);
 	}
 
 	/// @brief
@@ -418,9 +418,9 @@ public:
 	/// @li `begin()` has been called previously in the program.
 	/// @li `(address <= 1023)` &mdash;
 	/// `address` **must not** exceed a value of `1023`.
-	/// @li `((address + sizeof(hash_type) + sizeof(object)) <= 1024)` &mdash;
+	/// @li `((address + sizeof(HashType) + sizeof(object)) <= 1024)` &mdash;
 	/// The value of the expression
-	/// `(address + sizeof(hash_type) + sizeof(object))`
+	/// `(address + sizeof(HashType) + sizeof(object))`
 	/// **must not** exceed a value of `1024`.
 	/// @li `Type` **should not** be a pointer type.
 	/// @li `Type` **should not** have any member variables of pointer type.
@@ -438,10 +438,10 @@ public:
 	template<typename Type>
 	static bool readWithHash(uintptr_t address, Type & object)
 	{
-		hash_type storedHash;
+		HashType storedHash;
 	
 		read(address, storedHash);
-		read(address + sizeof(hash_type), object);
+		read(address + sizeof(HashType), object);
 		
 		return (storedHash == hash(object));
 	}
@@ -474,9 +474,9 @@ public:
 	/// @li `begin()` has been called previously in the program.
 	/// @li `(address <= 1023)` &mdash;
 	/// `address` **must not** exceed a value of `1023`.
-	/// @li `((address + sizeof(hash_type) + sizeof(object)) <= 1024)` &mdash;
+	/// @li `((address + sizeof(HashType) + sizeof(object)) <= 1024)` &mdash;
 	/// The value of the expression
-	/// `(address + sizeof(hash_type) + sizeof(object))`
+	/// `(address + sizeof(HashType) + sizeof(object))`
 	/// **must not** exceed a value of `1024`.
 	/// @li The expression `hash(object)` **must** be a valid expression.
 	/// @li The type of `hash(object)` **should** satisfy the same
@@ -504,12 +504,12 @@ public:
 	template<typename Hash, typename Type>
 	static void writeWithHash(uintptr_t address, const Type & object, Hash && hash)
 	{
-		using hash_type = decltype(hash(object));
+		using HashType = decltype(hash(object));
 		
-		const hash_type hashValue = static_cast<Hash&&>(hash)(object);
+		const HashType hashValue = static_cast<Hash&&>(hash)(object);
 		
 		write(address, hashValue);
-		write(address + sizeof(hash_type), object);
+		write(address + sizeof(HashType), object);
 	}
 
 	/// @brief
@@ -544,9 +544,9 @@ public:
 	/// @li `begin()` has been called previously in the program.
 	/// @li `(address <= 1023)` &mdash;
 	/// `address` **must not** exceed a value of `1023`.
-	/// @li `((address + sizeof(hash_type) + sizeof(object)) <= 1024)` &mdash;
+	/// @li `((address + sizeof(HashType) + sizeof(object)) <= 1024)` &mdash;
 	/// The value of the expression
-	/// `(address + sizeof(hash_type) + sizeof(object))`
+	/// `(address + sizeof(HashType) + sizeof(object))`
 	/// **must not** exceed a value of `1024`.
 	/// @li The expression `hash(object)` **must** be a valid expression.
 	/// @li The type of `hash(object)` **should** satisfy the same
@@ -567,14 +567,14 @@ public:
 	template<typename Hash, typename Type>
 	static bool readWithHash(uintptr_t address, Type & object, Hash && hash)
 	{
-		using hash_type = decltype(hash(object));
+		using HashType = decltype(hash(object));
 	
-		hash_type storedHash;
+		HashType storedHash;
 	
 		read(address, storedHash);
-		read(address + sizeof(hash_type), object);
+		read(address + sizeof(HashType), object);
 		
-		const hash_type hashValue = static_cast<Hash&&>(hash)(object);
+		const HashType hashValue = static_cast<Hash&&>(hash)(object);
 		
 		return (storedHash == hashValue);
 	}
