@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hash_5ftype',['hash_type',['../classArduboy2EEPROM.html#a6221853153af216c0d6087f1e1455cd7',1,'Arduboy2EEPROM']]]
+  ['hashtype',['HashType',['../classArduboy2EEPROM.html#a58f4ede0b1a6b773e269fd4604e489b7',1,'Arduboy2EEPROM']]]
 ];

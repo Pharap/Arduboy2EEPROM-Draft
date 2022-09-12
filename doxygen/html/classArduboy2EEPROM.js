@@ -1,10 +1,10 @@
 var classArduboy2EEPROM =
 [
-    [ "hash_type", "classArduboy2EEPROM.html#a6221853153af216c0d6087f1e1455cd7", null ],
+    [ "HashType", "classArduboy2EEPROM.html#a58f4ede0b1a6b773e269fd4604e489b7", null ],
     [ "begin", "classArduboy2EEPROM.html#a4d482ef8e8204c56a0feba68791bc0c8", null ],
     [ "commit", "classArduboy2EEPROM.html#a3804f82ad79284baa047fa3572ea1db5", null ],
-    [ "hash", "classArduboy2EEPROM.html#a0d81ac363020a75a0b56af7eb014f5b4", null ],
-    [ "hash", "classArduboy2EEPROM.html#a1eb431b4eb962bbd5fe1b18d7ac2af21", null ],
+    [ "hash", "classArduboy2EEPROM.html#a03bad380b02c4aa613f5a84b7e2712b6", null ],
+    [ "hash", "classArduboy2EEPROM.html#a64c8b410796152924d0a334abac8fcfd", null ],
     [ "read", "classArduboy2EEPROM.html#a6e9b09f0b94295c040204ca0cb674649", null ],
     [ "readByte", "classArduboy2EEPROM.html#aec3f9eea5f4adc592da921df2ae7ba2d", null ],
     [ "readWithHash", "classArduboy2EEPROM.html#abbfe69135a48dc52120d209bfba38b7a", null ],
