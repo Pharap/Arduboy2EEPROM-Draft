@@ -109,7 +109,9 @@ void saveHighscores()
 	Arduboy2EEPROM::write(highscoreAddress, highscores);
 
 	// Finalise the write transaction
-	Arduboy2EEPROM::commit();
+	if(!Arduboy2EEPROM::commit())
+		// If commit failed, signal an error with abort
+		abort();
 }
 
 void setup()

@@ -66,6 +66,9 @@ public:
 	/// @par Complexity
 	/// `O(1)`.
 	///
+	/// @retval true The commit operation succeeded.
+	/// @retval false The commit operation failed.
+	///
 	/// @pre
 	/// @li `begin()` has been called previously in the program.
 	///
@@ -89,9 +92,9 @@ public:
 	/// @note
 	/// When some data is written and other data is not, this is
 	/// known as a 'partial write'.
-	static void commit()
+	static bool commit()
 	{
-		// This function is intentionally left blank
+		return true;
 	}
 
 	/// @brief
@@ -164,9 +167,9 @@ public:
 	/// **must not** exceed a value of `1024`.
 	/// @li `Type` **should not** be a pointer type.
 	/// @li `Type` **should not** have any member variables of pointer type.
-	/// @li `Type` **should** be a
-	/// <a href="https://en.cppreference.com/w/cpp/named_req/TrivialType">
-	/// <em>trivial type</em></a>.
+	/// @li `Type` **should** be
+	/// <a href="https://en.cppreference.com/w/cpp/named_req/TriviallyCopyable">
+	/// <em>trivially copyable</em></a>.
 	/// @li If `Type` is a `struct` or `class` type, it **should** be a 
 	/// <a href="https://en.cppreference.com/w/cpp/language/classes#Standard-layout_class">
 	/// <em>standard-layout class</em></a>. &mdash;
@@ -231,9 +234,9 @@ public:
 	/// **must not** exceed a value of `1024`.
 	/// @li `Type` **should not** be a pointer type.
 	/// @li `Type` **should not** have any member variables of pointer type.
-	/// @li `Type` **should** be a
-	/// <a href="https://en.cppreference.com/w/cpp/named_req/TrivialType">
-	/// <em>trivial type</em></a>.
+	/// @li `Type` **should** be
+	/// <a href="https://en.cppreference.com/w/cpp/named_req/TriviallyCopyable">
+	/// <em>trivially copyable</em></a>.
 	/// @li If `Type` is a `struct` or `class` type, it **should** be a 
 	/// <a href="https://en.cppreference.com/w/cpp/language/classes#Standard-layout_class">
 	/// <em>standard-layout class</em></a>. &mdash;
@@ -274,7 +277,7 @@ public:
 	/// The type used to represent the hash code produced
 	/// by the `hash` function.
 	using HashType = uint32_t;
-	
+
 	/// @brief
 	/// Calculates a hash code from the specified sequence of bytes.
 	///
@@ -299,10 +302,13 @@ public:
 	/// If `size` is `0`, the returned hash code will also be `0`.
 	static HashType hash(const unsigned char * data, size_t size)
 	{
-		HashType value = size;
+		constexpr uint32_t offsetBasis = 2166136261ul;
+		constexpr uint32_t prime = 16777619ul;
+
+		HashType value = offsetBasis;
 		
 		for(size_t index = 0; index < size; ++index)
-			value = (((value << 5) ^ (value >> 27)) ^ data[index]);
+			value = ((hash ^ data[index]) * prime);
 			
 		return value;
 	}
@@ -322,9 +328,9 @@ public:
 	/// @pre
 	/// @li `Type` **should not** be a pointer type.
 	/// @li `Type` **should not** have any member variables of pointer type.
-	/// @li `Type` **should** be a
-	/// <a href="https://en.cppreference.com/w/cpp/named_req/TrivialType">
-	/// <em>trivial type</em></a>.
+	/// @li `Type` **should** be
+	/// <a href="https://en.cppreference.com/w/cpp/named_req/TriviallyCopyable">
+	/// <em>trivially copyable</em></a>.
 	/// @li If `Type` is a `struct` or `class` type, it **should** be a 
 	/// <a href="https://en.cppreference.com/w/cpp/language/classes#Standard-layout_class">
 	/// <em>standard-layout class</em></a>. &mdash;
@@ -370,9 +376,9 @@ public:
 	/// **must not** exceed a value of `1024`.
 	/// @li `Type` **should not** be a pointer type.
 	/// @li `Type` **should not** have any member variables of pointer type.
-	/// @li `Type` **should** be a
-	/// <a href="https://en.cppreference.com/w/cpp/named_req/TrivialType">
-	/// <em>trivial type</em></a>.
+	/// @li `Type` **should** be
+	/// <a href="https://en.cppreference.com/w/cpp/named_req/TriviallyCopyable">
+	/// <em>trivially copyable</em></a>.
 	/// @li If `Type` is a `struct` or `class` type, it **should** be a 
 	/// <a href="https://en.cppreference.com/w/cpp/language/classes#Standard-layout_class">
 	/// <em>standard-layout class</em></a>. &mdash;
@@ -424,9 +430,9 @@ public:
 	/// **must not** exceed a value of `1024`.
 	/// @li `Type` **should not** be a pointer type.
 	/// @li `Type` **should not** have any member variables of pointer type.
-	/// @li `Type` **should** be a
-	/// <a href="https://en.cppreference.com/w/cpp/named_req/TrivialType">
-	/// <em>trivial type</em></a>.
+	/// @li `Type` **should** be
+	/// <a href="https://en.cppreference.com/w/cpp/named_req/TriviallyCopyable">
+	/// <em>trivially copyable</em></a>.
 	/// @li If `Type` is a `struct` or `class` type, it **should** be a 
 	/// <a href="https://en.cppreference.com/w/cpp/language/classes#Standard-layout_class">
 	/// <em>standard-layout class</em></a>. &mdash;
@@ -483,9 +489,9 @@ public:
 	/// requirements as `Type`.
 	/// @li `Type` **should not** be a pointer type.
 	/// @li `Type` **should not** have any member variables of pointer type.
-	/// @li `Type` **should** be a
-	/// <a href="https://en.cppreference.com/w/cpp/named_req/TrivialType">
-	/// <em>trivial type</em></a>.
+	/// @li `Type` **should** be
+	/// <a href="https://en.cppreference.com/w/cpp/named_req/TriviallyCopyable">
+	/// <em>trivially copyable</em></a>.
 	/// @li If `Type` is a `struct` or `class` type, it **should** be a 
 	/// <a href="https://en.cppreference.com/w/cpp/language/classes#Standard-layout_class">
 	/// <em>standard-layout class</em></a>. &mdash;
@@ -553,9 +559,9 @@ public:
 	/// requirements as `Type`.
 	/// @li `Type` **should not** be a pointer type.
 	/// @li `Type` **should not** have any member variables of pointer type.
-	/// @li `Type` **should** be a
-	/// <a href="https://en.cppreference.com/w/cpp/named_req/TrivialType">
-	/// <em>trivial type</em></a>.
+	/// @li `Type` **should** be
+	/// <a href="https://en.cppreference.com/w/cpp/named_req/TriviallyCopyable">
+	/// <em>trivially copyable</em></a>.
 	/// @li If `Type` is a `struct` or `class` type, it **should** be a 
 	/// <a href="https://en.cppreference.com/w/cpp/language/classes#Standard-layout_class">
 	/// <em>standard-layout class</em></a>. &mdash;
