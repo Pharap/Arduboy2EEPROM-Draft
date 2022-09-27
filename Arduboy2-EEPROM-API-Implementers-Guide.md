@@ -241,22 +241,28 @@ public:
 
 	static unsigned char readByte(uintptr_t address);
 
+	static void write(uintptr_t address, const unsigned char * data, size_t size)
+	{
+		for(size_t index = 0; index < size; ++index)
+			writeByte(address + index, data[index]);
+	}
+
 	template<typename Type>
 	static void write(uintptr_t address, const Type & object)
 	{
-		auto pointer = reinterpret_cast<const unsigned char *>(&object);
-		
-		for(size_t index = 0; index < sizeof(object); ++index)
-			writeByte(address + index, pointer[index]);
+		write(reinterpret_cast<const unsigned char *>(&object), sizeof(object));
+	}
+
+	static void read(uintptr_t address, const unsigned char * data, size_t size)
+	{
+		for(size_t index = 0; index < size; ++index)
+			data[index] = readByte(address + index);
 	}
 
 	template<typename Type>
 	static void read(uintptr_t address, Type & object)
 	{
-		auto pointer = reinterpret_cast<unsigned char *>(&object);
-		
-		for(size_t index = 0; index < sizeof(object); ++index)
-			pointer[index] = readByte(address + index);
+		read(reinterpret_cast<unsigned char *>(&object), sizeof(object));
 	}
 
 	using hash_type = uint32_t;

@@ -147,10 +147,48 @@ public:
 	}
 
 	/// @brief
+	/// Writes any sequence of bytes to EEPROM at the specified address.
+	///
+	/// @par Complexity
+	/// `O(n)`, where `n` is `size`.
+	///
+	/// @param[in] address
+	/// The address at which the provided bytes are to be written.
+	///
+	/// @param[in] data
+	/// A pointer to a contiguous sequence of bytes to be written to EEPROM.
+	///
+	/// @param[in] size
+	/// The number of contiguous bytes to be written to EEPROM.
+	///
+	/// @pre
+	/// @li `begin()` has been called previously in the program.
+	/// @li `(address <= 1023)` &mdash;
+	/// `address` **must not** exceed a value of `1023`.
+	/// @li `((address + size) <= 1024)` &mdash;
+	/// The value of the expression `(address + size)`
+	/// **must not** exceed a value of `1024`.
+	/// @li The contiguous sequence of bytes pointed to by `data`
+	/// **must** be at least `size` bytes in length.
+	///
+	/// @note
+	/// If the value to be written is the same as the value
+	/// already stored at the specified address then this
+	/// function will _not_ overwrite the already stored value.
+	/// This behaviour avoids unnecessarily wasting EEPROM
+	/// write-erase cycles, which are a limited resource.
+	static void write(uintptr_t address, const unsigned char * data, size_t size)
+	{
+		for(size_t index = 0; index < size; ++index)
+			writeByte(address + index, data[index]);
+	}
+
+	/// @brief
 	/// Writes any object to EEPROM at the specified address.
 	///
 	/// @par Complexity
-	/// `O(n)`, where `n` is `sizeof(object)`.
+	/// `O(n)`, where `n` is
+	/// [`sizeof(object)`](https://en.cppreference.com/w/cpp/language/sizeof).
 	///
 	/// @param[in] address
 	/// The address at which the provided object is to be written.
@@ -205,10 +243,38 @@ public:
 	template<typename Type>
 	static void write(uintptr_t address, const Type & object)
 	{
-		auto pointer = reinterpret_cast<const unsigned char *>(&object);
-		
-		for(size_t index = 0; index < sizeof(object); ++index)
-			writeByte(address + index, pointer[index]);
+		write(reinterpret_cast<const unsigned char *>(&object), sizeof(object));
+	}
+
+	/// @brief
+	/// Reads any sequence of bytes to EEPROM at the specified address.
+	///
+	/// @par Complexity
+	/// `O(n)`, where `n` is `size`.
+	///
+	/// @param[in] address
+	/// The address at which bytes are to be read from.
+	///
+	/// @param[in] data
+	/// A pointer to a contiguous sequence of bytes large enough to store
+	/// `size` bytes of data.
+	///
+	/// @param[in] size
+	/// The number of contiguous bytes to be read from EEPROM.
+	///
+	/// @pre
+	/// @li `begin()` has been called previously in the program.
+	/// @li `(address <= 1023)` &mdash;
+	/// `address` **must not** exceed a value of `1023`.
+	/// @li `((address + size) <= 1024)` &mdash;
+	/// The value of the expression `(address + size)`
+	/// **must not** exceed a value of `1024`.
+	/// @li The contiguous sequence of bytes pointed to by `data`
+	/// **must** be at least `size` bytes in length.
+	static void read(uintptr_t address, const unsigned char * data, size_t size)
+	{
+		for(size_t index = 0; index < size; ++index)
+			data[index] = readByte(address + index);
 	}
 
 	/// @brief
@@ -267,10 +333,7 @@ public:
 	template<typename Type>
 	static void read(uintptr_t address, Type & object)
 	{
-		auto pointer = reinterpret_cast<unsigned char *>(&object);
-		
-		for(size_t index = 0; index < sizeof(object); ++index)
-			pointer[index] = readByte(address + index);
+		read(reinterpret_cast<unsigned char *>(&object), sizeof(object));
 	}
 	
 	/// @brief
